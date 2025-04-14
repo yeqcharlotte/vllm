@@ -1,5 +1,6 @@
 {{- bos_token }}
-{%- if custom_tools is defined %}
+{#- If custom_tools is a non-empty list, then we set the tools #}
+{%- if custom_tools is defined and custom_tools%}
     {%- set tools = custom_tools %}
 {%- endif %}
 {%- if not tools_in_user_message is defined %}
