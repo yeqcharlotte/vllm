@@ -12,10 +12,11 @@ from torch.nn import Module
 
 def is_activation_quantization_format(format: str) -> bool:
     _ACTIVATION_QUANTIZATION_FORMATS = [
-        CompressionFormat.naive_quantized.value,
-        CompressionFormat.int_quantized.value,
-        CompressionFormat.float_quantized.value,
-        CompressionFormat.nvfp4_pack_quantized.value
+        fmt.value for fmt in [
+            CompressionFormat.naive_quantized, CompressionFormat.int_quantized,
+            CompressionFormat.float_quantized,
+            getattr(CompressionFormat, 'nvfp4_pack_quantized', None)
+        ] if fmt is not None
     ]
     return format in _ACTIVATION_QUANTIZATION_FORMATS
 
