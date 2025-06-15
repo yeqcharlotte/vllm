@@ -5,7 +5,7 @@ import hashlib
 import os
 import sys
 import tempfile
-from typing import Any, Callable, Optional, TYPE_CHECKING
+from typing import TYPE_CHECKING, Any, Callable, Optional
 
 if TYPE_CHECKING:
     VLLM_HOST_IP: str = ""
@@ -533,8 +533,8 @@ environment_variables: dict[str, Callable[[], Any]] = {
     lambda: bool(int(os.getenv("VLLM_XLA_USE_SPMD", "0"))),
     "VLLM_FUSED_MOE_CHUNK_SIZE":
     lambda: int(os.getenv("VLLM_FUSED_MOE_CHUNK_SIZE", "32768")),
-    # Control whether to use fused MoE activation chunking. Current chunking 
-    # logic is incompatible with torch.compile and causes IMA. See issue 
+    # Control whether to use fused MoE activation chunking. Current chunking
+    # logic is incompatible with torch.compile and causes IMA. See issue
     # https://github.com/vllm-project/vllm/issues/19631.
     "VLLM_DISABLE_FUSED_MOE_ACTIVATION_CHUNKING":
     lambda: bool(os.getenv("VLLM_DISABLE_FUSED_MOE_ACTIVATION_CHUNKING", "1")),
