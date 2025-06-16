@@ -1322,6 +1322,7 @@ class FusedMoE(torch.nn.Module):
             if indices_type is not None:
                 topk_ids = topk_ids.to(dtype=indices_type)
 
+        print(f"{topk_ids.dtype=} {topk_ids.shape=}")
         return topk_weights, topk_ids
 
     def must_reduce_shared_expert_outputs(self) -> bool:
