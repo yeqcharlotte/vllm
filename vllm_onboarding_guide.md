@@ -388,7 +388,6 @@ sequenceDiagram
             AsyncEngine-->>Client: yield RequestOutput(delta)
         else Request Complete
             AsyncEngine-->>Client: yield RequestOutput(final)
-            break
         end
     end
 ```
