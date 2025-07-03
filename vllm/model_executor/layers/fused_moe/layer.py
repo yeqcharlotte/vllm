@@ -1228,7 +1228,8 @@ class FusedMoE(torch.nn.Module):
                 gating_output=router_logits,
                 topk=top_k,
                 renormalize=renormalize)
-            if indices_type is not None:
+            # uint32 is not a valid index type
+            if indices_type is not None and indices_type != torch.uint32:
                 topk_ids = topk_ids.to(dtype=indices_type)
 
         if enable_eplb:
