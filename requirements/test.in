@@ -49,9 +49,9 @@ tritonclient==2.51.0
 numba == 0.60.0; python_version == '3.9' # v0.61 doesn't support Python 3.9. Required for N-gram speculative decoding
 numba == 0.61.2; python_version > '3.9'
 numpy
-runai-model-streamer==0.11.0
-runai-model-streamer-s3==0.11.0
-fastsafetensors>=0.1.10
+runai-model-streamer==0.11.0; sys_platform == "linux" and platform_machine == "x86_64"
+runai-model-streamer-s3==0.11.0; sys_platform == "linux" and platform_machine == "x86_64"
+fastsafetensors>=0.1.10; platform_machine == 'x86_64'
 pydantic>=2.10 # 2.9 leads to error on python 3.10
 decord==0.6.0; sys_platform == "linux" and platform_machine == "x86_64"
 terratorch==1.1rc3 # required for PrithviMAE test
