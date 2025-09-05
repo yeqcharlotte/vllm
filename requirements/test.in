@@ -51,7 +51,7 @@ numba == 0.61.2; python_version > '3.9'
 numpy
 runai-model-streamer==0.11.0; sys_platform == "linux" and platform_machine == "x86_64"
 runai-model-streamer-s3==0.11.0; sys_platform == "linux" and platform_machine == "x86_64"
-fastsafetensors>=0.1.10; platform_machine == 'x86_64'
+fastsafetensors>=0.1.10
 pydantic>=2.10 # 2.9 leads to error on python 3.10
 decord==0.6.0; sys_platform == "linux" and platform_machine == "x86_64"
 terratorch==1.1rc3 # required for PrithviMAE test
