@@ -13,7 +13,7 @@ prompts = [
 sampling_params = SamplingParams(temperature=1, max_tokens=16)
 
 os.environ["TIKTOKEN_RS_CACHE_DIR"] = MODEL_PATH
-os.environ["FLASHINFER_WORKSPACE_BASE"] = "/tmp"
+os.environ["FLASHINFER_WORKSPACE_BASE"] = "/tmp/yeq/"
 os.environ["VLLM_USE_FLASHINFER_SAMPLER"] = "1"
 os.environ["VLLM_DISABLE_COMPILE_CACHE"] = "1"
 os.environ["VLLM_GPU_MEMORY_UTILIZATION"] = "0.8"
